@@ -1,0 +1,58 @@
+13. Roman to Integer
+
+Given a roman numeral, convert it to an integer.
+
+
+
+
+
+https://leetcode.com/problems/roman-to-integer/submissions/
+
+
+
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        g=0
+        n=len(s)
+        for i in range(len(s)):
+            if(s[i]=="I"):
+                if(i==n-1 or s[i+1]=="I"):
+                    g=g+1
+                else:
+                    g=g-1
+                # print("I",g)
+            elif(s[i]=="V"):
+                if(i==n-1 or s[i+1]=="V" or s[i+1]=="I"):
+                    g=g+5
+                else:
+                    g=g-5
+                # print("V",g)
+            if(s[i]=="X"):
+                if(i==n-1 or s[i+1]=="X" or s[i+1]=="V" or s[i+1]=="I"):
+                    g=g+10
+                else:
+                    g=g-10
+                # print("X",g)
+            elif(s[i]=="L"):
+                if(i==n-1 or s[i+1]=="L" or s[i+1]=="X" or s[i+1]=="V" or s[i+1]=="I"):
+                    g=g+50
+                else:
+                    g=g-50
+                # print("L",g)
+            elif(s[i]=="C" ):
+                if(i==n-1 or s[i+1]=="C" or s[i+1]=="L" or s[i+1]=="X" or s[i+1]=="V" or s[i+1]=="I"):
+                    g=g+100
+                else:
+                    g=g-100
+                # print("C",g)
+            elif(s[i]=="D"):
+                if(i==n-1 or s[i+1]=="D"or s[i+1]=="C"or s[i+1]=="L"or s[i+1]=="X"or s[i+1]=="X"or s[i+1]=="V"or s[i+1]=="I"):
+                    g=g+500
+                else:
+                    g=g-500
+                # print("D",g)
+            elif(s[i]=="M"):
+                g=g+1000
+                # print("M",g)
+        return g
