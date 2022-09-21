@@ -1,0 +1,55 @@
+989. Add to Array-Form of Integer
+
+The array-form of an integer num is an array representing its digits in left to right order.
+
+For example, for num = 1321, the array form is [1,3,2,1].
+Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
+
+ 
+ 
+ https://leetcode.com/problems/add-to-array-form-of-integer/
+
+
+
+
+
+
+<h5>Time limit exceeded</h5>
+class Solution:
+    def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        s=0
+        m=[]
+        n=len(num)
+        for i in range(len(num)):
+            j=pow(10,n-i-1)
+            #print("j",j)
+            l=num[i]*j
+            s=s+l
+            #print(i,s)
+        #print(s)
+        s=s+k
+        #print(s)
+        se=str(s)
+        #print(se)
+        for i in se:
+            #print(i)
+            m.append(int(i))
+        return m
+
+
+
+<h5>Optimized solution</h6>
+
+
+class Solution:
+    def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        s=""
+        l=[]
+        for i in num:
+            s=s+str(i)
+        sum=int(s)
+        sum=sum+k
+        s1=str(sum)
+        for i in s1:
+            l.append(int(i))
+        return l
