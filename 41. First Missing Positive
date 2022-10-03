@@ -12,10 +12,17 @@ OPTIMIZED:
 
 
 
-
-
-
-
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        i=1
+        nums=set(nums)
+        while(i<=len(nums)+1):
+            j=i
+            # print(j)
+            if(j not in nums):
+                break
+            i=i+1
+        return j
 
 
 
