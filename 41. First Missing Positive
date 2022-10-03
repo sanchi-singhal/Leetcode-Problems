@@ -1,0 +1,80 @@
+
+41. First Missing Positive
+
+
+Given an unsorted integer array nums, return the smallest missing positive integer.
+
+
+https://leetcode.com/problems/first-missing-positive/
+
+
+OPTIMIZED:
+
+
+
+
+
+
+
+
+
+
+
+TLE:
+
+
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        i=0
+        while(i<len(nums)):
+            if(nums[i]<=0):
+                nums.remove(nums[i])
+            else:
+                i=i+1
+        # print(nums)
+        if(len(nums)==0):
+            return "1"
+        else:
+            ma=max(nums)
+            l=len(nums)
+            for i in range(l,ma):
+                nums.append(None)
+            # print(nums)
+            i=0
+            while(i<ma):
+                if(nums[i]==None) :
+                    i=i+1
+                elif(i==nums[i]-1):
+                    i=i+1
+                elif(i!=nums[i]-1):
+                    index=nums[i]-1
+                    nums[i],nums[index]=nums[index],nums[i]
+                    # print("hi",nums)
+            # print(nums)
+            if None in nums:
+                return nums.index(None)+1
+            else:
+                return max(nums)+1
+                
+ 
+ 
+ 
+ 
+ 
+ TLE:
+ 
+ 
+ 
+ 
+ class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        ma=max(nums)
+        if(ma>=0):
+            for i in range(0,ma+2):
+                j=i+1
+                print(j)
+                if(j not in nums):
+                    break
+            return j
+        else:
+            return 1
