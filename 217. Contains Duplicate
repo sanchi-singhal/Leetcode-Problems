@@ -1,0 +1,32 @@
+217. Contains Duplicate
+
+
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+ 
+ 
+ https://leetcode.com/problems/contains-duplicate/
+ 
+ OPTIMIZED
+ 
+ class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if(len(set(nums))!=len(nums)):
+            return True
+        else:
+            return False
+        
+ 
+ TLE
+ 
+ class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        k=0
+        for i in nums:
+            if(nums.count(i)>1):
+                k=1
+                break
+        if(k==1):
+            return True
+        else:
+            return False
