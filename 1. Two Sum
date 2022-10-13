@@ -1,0 +1,24 @@
+1. Two Sum
+
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exa
+
+https://leetcode.com/problems/two-sum/
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        l=[]
+        for i in range(len(nums)):
+            m = target-nums[i]
+            nums[i]="a"
+            if(m in nums):
+                j=nums.index(m)
+                break
+        l.append(i)
+        l.append(j)
+        return l
+            
+
