@@ -1,0 +1,33 @@
+6209. Range Product Queries of Powers
+
+
+https://leetcode.com/contest/biweekly-contest-89/problems/range-product-queries-of-powers/
+
+
+
+class Solution:
+    def productQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+        a=bin(n)
+        # print(a)
+        l=list(a[2::])
+        l1=l[::-1]
+        final=[]
+        # print(l1)
+        aa=[]
+        for i in range(len(l1)):
+            l1[i]=int(l1[i])
+            if(l1[i]==1):
+                b=pow(2,i)
+                aa.append(b)
+        # print(aa)
+        # print(l1)
+        for i in range(len(queries)):
+            ans=1
+            k=queries[i][0]
+            while(k<=queries[i][1]):
+                ans=ans*aa[k]
+                k=k+1
+            ans=ans%((pow(10,9))+7)
+            final.append(ans)
+        # print(final)
+        return final
