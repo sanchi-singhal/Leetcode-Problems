@@ -1,0 +1,48 @@
+6208. Number of Valid Clock Times
+
+
+
+https://leetcode.com/contest/biweekly-contest-89/problems/number-of-valid-clock-times/
+
+
+
+
+You are given a string of length 5 called time, representing the current time on a digital clock in the format "hh:mm". The earliest possible time is "00:00" and the latest possible time is "23:59".
+
+In the string time, the digits represented by the ? symbol are unknown, and must be replaced with a digit from 0 to 9.
+
+
+
+class Solution:
+    def countTime(self, time: str) -> int:
+        l=[0 for i in range(len(time))]
+        # l[1]=10
+        l[3]=6
+        l[4]=10
+        # print(l)
+        final=1
+        # print(final)
+        if(time[0]=="?"):
+            if(time[1]=="?"):
+                ans=24
+            elif(time[1]=="1" or time[1]=="2" or time[1]=="3" or time[1]=="0"):
+                ans=3
+            else:
+                ans=2
+            final=final*ans
+        # print(final)
+        if(time[1]=="?"):
+            if(time[0]=="?"):
+                ans=1
+            elif(time[0]=="0" or time[0]=="1"):
+                ans=10
+            else:
+                ans=4
+            final=final*ans
+        # print(final)
+        for i in range(3,len(time)):
+            if(time[i]=="?"):
+                ans=l[i]
+                final=final*ans
+        
+        return final
