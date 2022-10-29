@@ -1,0 +1,36 @@
+6228. Words Within Two Edits of Dictionary
+
+
+
+https://leetcode.com/contest/biweekly-contest-90/problems/words-within-two-edits-of-dictionary/
+
+
+
+
+
+class Solution:
+    def twoEditWords(self, queries: List[str], dictionary: List[str]) -> List[str]:
+        q=queries.copy()
+        l1=[]
+        for i in range(len(queries)):
+            l=[]
+            for j in range(len(dictionary)):
+                s=0
+                for k in range(len(queries[i])):
+                    if(queries[i][k]==dictionary[j][k]):
+                        pass
+                    else:
+                        s=s+1
+                l.append(s)
+            # print(l)
+            d=min(l)
+            ind=l.index(d)
+            # print(d,ind)
+            if(d<=2):
+                queries[i]=dictionary[ind]
+                # print(queries,dictionary)
+        for i in range(len(queries)):
+            if queries[i] in dictionary:
+                l1.append(q[i])
+        # print(l1)
+        return l1
