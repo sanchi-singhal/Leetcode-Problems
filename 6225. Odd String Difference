@@ -1,0 +1,30 @@
+6225. Odd String Difference
+
+
+
+
+https://leetcode.com/contest/biweekly-contest-90/problems/odd-string-difference/
+
+
+
+
+class Solution:
+    def oddString(self, words: List[str]) -> str:
+        l=[]
+        m=[]
+        c=-1
+        for i in range(len(words)):
+            l1=[]
+            for j in range(len(words[i])-1):
+                l1.append(ord(words[i][j+1])-ord(words[i][j]))
+            l.append(l1)
+            m.append(i)
+        # print(l,m)
+        for i in range(len(l)):
+            if(l.count(l[i])==1):
+                c=i
+                break
+        # print(c)
+        # print(i)
+        # print(words[c])
+        return words[c]
