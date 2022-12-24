@@ -1,0 +1,21 @@
+1991. Find the Middle Index in Array
+
+
+https://leetcode.com/problems/find-the-middle-index-in-array/
+
+
+class Solution:
+    def findMiddleIndex(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            if(i!=0):
+                s=sum(nums[:i])
+            else:
+                s=0
+            m=sum(nums[i+1:len(nums)])
+            # print(s,m,i)
+            if(s==m):
+                l=i
+                break
+            else:
+                l=-1
+        return l
