@@ -1,0 +1,25 @@
+4. Median of Two Sorted Arrays
+
+
+
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+
+
+
+
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        num=nums1+nums2
+        num.sort()
+        print(num)
+        l=len(num)
+        if(l%2!=0):
+            m=l//2
+            # print(m)
+            k=num[m]
+        else:
+            m=l//2
+            n=l//2-1
+            k=(num[m]+num[n])/2
+
+        return k
