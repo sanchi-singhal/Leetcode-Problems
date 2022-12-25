@@ -1,0 +1,22 @@
+75. Sort Colors
+
+
+
+
+https://leetcode.com/problems/sort-colors/
+
+
+
+
+
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        for i in range(len(nums)-1):
+            m=min(nums[i+1:])
+            # print(nums[i+1:])
+            j=nums[i+1:].index(m)+i+1
+            # print(i,j)
+            if(m<nums[i]):
+                nums[i],nums[j]=nums[j],nums[i]
+            # print(i,j,nums,m)
