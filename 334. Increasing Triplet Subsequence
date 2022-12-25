@@ -1,0 +1,21 @@
+334. Increasing Triplet Subsequence
+
+
+
+https://leetcode.com/problems/increasing-triplet-subsequence/description/
+
+
+
+TLE
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        cc=0
+        for a in range(len(nums)):
+            for b in range(a+1,len(nums)):
+                for c in range(b+1,len(nums)):
+                        if(nums[a]<nums[b] and nums[b]<nums[c]):
+                            cc=cc+1
+        if(cc==0):
+            return False
+        else:
+            return True
