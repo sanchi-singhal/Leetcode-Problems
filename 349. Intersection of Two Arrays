@@ -1,0 +1,14 @@
+349. Intersection of Two Arrays
+
+
+https://leetcode.com/problems/intersection-of-two-arrays/
+
+
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        m=set(nums1)
+        n=set(nums2)
+        p=m.intersection(n)
+        q=set(p)
+        l=list(q)
+        return l
