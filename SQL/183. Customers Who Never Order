@@ -1,0 +1,11 @@
+183. Customers Who Never Order
+
+
+
+https://leetcode.com/problems/customers-who-never-order/?envType=study-plan&id=sql-i
+
+
+
+select name as Customers from Customers where name not in 
+(select Customers.name from Customers
+join Orders on Customers.id=Orders.customerId);
