@@ -1,0 +1,21 @@
+47. Permutations II
+
+
+https://leetcode.com/problems/permutations-ii/description/
+
+
+
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        l=[]
+        s=itertools.permutations(nums)
+        for i in s:
+            l.append(list(i))
+        print(l)
+        m=[]
+        m.append(l[0])
+        for i in range(1,len(l)):
+            if l[i] not in m:
+                m.append(l[i])
+        # print(m)
+        return m
