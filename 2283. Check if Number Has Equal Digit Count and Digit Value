@@ -1,0 +1,18 @@
+2283. Check if Number Has Equal Digit Count and Digit Value
+
+
+https://leetcode.com/problems/check-if-number-has-equal-digit-count-and-digit-value/
+
+
+
+class Solution:
+    def digitCount(self, num: str) -> bool:
+        n=len(num)
+        c=0
+        for i in range(len(num)):
+            if(num.count(str(i))==int(num[i])):
+                c=c+1
+        if(c==n):
+            return True
+        else:
+            return False
