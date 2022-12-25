@@ -1,0 +1,16 @@
+389. Find the Difference
+
+
+
+https://leetcode.com/problems/find-the-difference/
+
+
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        l=list(s)
+        m=list(t)
+        for i in m:
+            if i in l:
+                l.remove(i)
+            else:
+                return i
