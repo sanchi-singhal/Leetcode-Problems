@@ -1,0 +1,27 @@
+1323. Maximum 69 Number
+
+
+
+https://leetcode.com/problems/maximum-69-number/
+
+
+
+
+class Solution:
+    def maximum69Number (self, num: int) -> int:
+        s=str(num)
+        # print(s)
+        l=[]
+        for i in s:
+            l.append(i)
+        print(l)
+        for i in range(len(l)):
+            if(l[i]=="6"):
+                l[i]="9"
+                break
+        # print(l)
+        ss=""
+        for i in l:
+            ss=ss+i
+        an=int(ss)
+        return an
