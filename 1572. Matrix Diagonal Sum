@@ -1,0 +1,20 @@
+1572. Matrix Diagonal Sum
+
+
+
+https://leetcode.com/problems/matrix-diagonal-sum/
+
+
+
+
+
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        l=[]
+        for i in range(len(mat)):
+            for j in range(len(mat[i])):
+                if((i==j) or (i+j==len(mat[i])-1)):
+                    l.append(mat[i][j])
+                    mat[i][j]=0
+        # print(l)
+        return sum(l)
