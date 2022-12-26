@@ -1,0 +1,31 @@
+461. Hamming Distance
+
+
+
+https://leetcode.com/problems/hamming-distance/
+
+
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        a=bin(x)
+        b=bin(y)
+        # print(a,b)
+        m=str(a)[2:]
+        n=str(b)[2:]
+        # print(m,n)
+        r=len(m)
+        s=len(n)
+        # print(r,s)
+        if(r<s):
+            for i in range(s-r):
+                m="0"+m
+        else:
+            for i in range(r-s):
+                n="0"+n
+        # print(m,n)
+        c=0
+        for i in range(len(m)):
+            if(m[i]!=n[i]):
+                c=c+1
+        return c
