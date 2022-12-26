@@ -1,0 +1,21 @@
+747. Largest Number At Least Twice of Others
+
+
+
+
+
+https://leetcode.com/problems/largest-number-at-least-twice-of-others/
+
+
+
+
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
+        n=max(nums)
+        m=nums.index(n)
+        nums.remove(n)
+        for i in nums:
+            if(n<2*i):
+                return -1
+        else:
+            return m
