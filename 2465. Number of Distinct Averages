@@ -1,0 +1,19 @@
+2465. Number of Distinct Averages
+
+
+
+https://leetcode.com/problems/number-of-distinct-averages/
+
+
+
+class Solution:
+    def distinctAverages(self, nums: List[int]) -> int:
+        l=[]
+        while(len(nums)>0):
+            ma=max(nums)
+            mi=min(nums)
+            nums.remove(ma)
+            nums.remove(mi)
+            avg=(ma+mi)/2
+            l.append(avg)
+        return len(set(l))
