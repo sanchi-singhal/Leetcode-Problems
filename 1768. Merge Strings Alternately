@@ -1,0 +1,29 @@
+1768. Merge Strings Alternately
+
+
+
+
+https://leetcode.com/problems/merge-strings-alternately/
+
+
+
+
+
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        l=list(map(str,word1))
+        m=list(map(str,word2))
+        s=[]
+        for i in range(len(l)):
+            if(len(m)>0):
+                s.append(l[i])
+                s.append(m[0])
+                m.remove(m[0])
+            else:
+                s.append(l[i])
+        for i in m:
+            s.append(i)
+        ss=""
+        for i in s:
+            ss=ss+i
+        return ss
