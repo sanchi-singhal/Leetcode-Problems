@@ -1,0 +1,22 @@
+1859. Sorting the Sentence
+
+
+
+https://leetcode.com/problems/sorting-the-sentence/
+
+
+
+
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        m=list(map(str,s.split(" ")))
+        l=[None for i in range(len(m))]
+        for i in m:
+            s=int(i[-1])
+            l[s-1]=i[:len(i)-1]
+        ss=""
+        for i in l:
+            ss=ss+" "+i
+        k=ss.strip()
+        # print(l)
+        return k
