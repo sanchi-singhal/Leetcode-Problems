@@ -1,0 +1,21 @@
+771. Jewels and Stones
+
+
+
+
+
+
+https://leetcode.com/problems/jewels-and-stones/
+
+
+
+
+
+
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        c=0
+        for i in jewels:
+            if i in stones:
+                c=c+stones.count(i)
+        return c
