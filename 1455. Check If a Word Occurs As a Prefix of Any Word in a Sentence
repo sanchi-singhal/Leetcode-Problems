@@ -1,0 +1,18 @@
+1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence
+
+
+
+https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/
+
+
+
+
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        l=list(map(str,sentence.split(" ")))
+        m=len(searchWord)
+        for i in range(len(l)):
+            if(l[i][:m]==searchWord):
+                return i+1
+        else:
+            return -1
