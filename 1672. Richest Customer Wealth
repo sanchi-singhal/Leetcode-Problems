@@ -1,0 +1,20 @@
+1672. Richest Customer Wealth
+
+
+
+
+
+https://leetcode.com/problems/richest-customer-wealth/
+
+
+
+
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        l=[]
+        for i in range(len(accounts)):
+            s=0
+            for j in range(len(accounts[i])):
+                s=s+accounts[i][j]
+            l.append(s)
+        return max(l)
