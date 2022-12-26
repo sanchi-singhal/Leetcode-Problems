@@ -1,0 +1,19 @@
+1832. Check if the Sentence Is Pangram
+
+
+
+https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+
+
+
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        c=0
+        for i in range(97,123):
+            # print(chr(i))
+            if(sentence.count(chr(i))>=1):
+                c=c+1
+        if(c==26):
+            return True
+        else:
+            return False
