@@ -1,0 +1,17 @@
+1281. Subtract the Product and Sum of Digits of an Integer
+
+
+
+https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+
+
+
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        s=str(n)
+        su=0
+        p=1
+        for i in s:
+            su=su+int(i)
+            p=p*int(i)
+        return p-su
