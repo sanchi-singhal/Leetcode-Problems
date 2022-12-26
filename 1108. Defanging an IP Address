@@ -1,0 +1,22 @@
+1108. Defanging an IP Address
+
+
+
+
+https://leetcode.com/problems/defanging-an-ip-address/
+
+
+
+
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        l=[]
+        for i in address:
+            l.append(i)
+        for i in range(len(l)):
+            if(l[i]=="."):
+                l[i]="[.]"
+        ss=""
+        for i in l:
+            ss=ss+i
+        return ss
