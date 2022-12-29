@@ -1,0 +1,22 @@
+342. Power of Four
+
+
+
+https://leetcode.com/problems/power-of-four/
+
+
+
+
+
+
+
+
+TLE
+
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        for i in range(n):
+            if(pow(4,i)==n):
+                return True
+        else:
+            return False
