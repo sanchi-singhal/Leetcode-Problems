@@ -1,0 +1,25 @@
+2441. Largest Positive Integer That Exists With Its Negative
+
+
+
+
+https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/
+
+
+
+
+
+class Solution:
+    def findMaxK(self, nums: List[int]) -> int:
+        l=[]
+        for i in range(len(nums)):
+            if(nums[i]>0):
+                s=-nums[i]
+                if(s in nums):
+                    l.append(nums[i])
+        # print(l)
+        if(l==[]):
+            return -1
+        else:
+            return max(l)
+        
