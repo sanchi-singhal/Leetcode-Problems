@@ -1,0 +1,35 @@
+824. Goat Latin
+
+
+https://leetcode.com/problems/goat-latin/
+
+
+
+
+
+
+class Solution:
+    def toGoatLatin(self, sentence: str) -> str:
+        l=list(map(str,sentence.split()))
+        # print(l)
+        m=[]
+        for i in l:
+            if(i[0]=="a" or i[0]=="e" or i[0]=="i" or i[0]=="o" or i[0]=="u"or i[0]=="A" or i[0]=="I" or i[0]=="O" or i[0]=="E" or i[0]=="U"):
+                k=i+"ma"
+                m.append(k)
+            else:
+                k=i[1::]+i[0]+"ma"
+                m.append(k)
+        # print(m)
+        n=[]
+        for i in range(len(m)):
+            d=i+1
+            n.append(m[i]+"a"*d)
+        # print(n)
+        ans=""
+        for i in n:
+            ans=ans+i+" "
+        m=ans.strip()
+        # print(ans)
+
+        return m
