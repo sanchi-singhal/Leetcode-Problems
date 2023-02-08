@@ -20,3 +20,20 @@ class Solution:
                 return True
         else:
             return False
+
+
+OPTIMIZED
+
+
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        i=1
+        if(n==1):
+            return True
+        else:
+            while(pow(4,i)<=n):
+                if(pow(4,i)==n):
+                    return True 
+                i=i+1
+            else:
+                return False
