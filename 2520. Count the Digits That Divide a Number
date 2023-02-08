@@ -1,0 +1,16 @@
+2520. Count the Digits That Divide a Number
+
+
+
+https://leetcode.com/problems/count-the-digits-that-divide-a-number/
+
+
+
+class Solution:
+    def countDigits(self, num: int) -> int:
+        c=0
+        m=str(num)
+        for i in m:
+            if(num%int(i)==0):
+                c=c+1
+        return c
