@@ -1,0 +1,18 @@
+326. Power of Three
+
+
+https://leetcode.com/problems/power-of-three/
+
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        i=1
+        if(n==1):
+            return True
+        else:
+            while(pow(3,i)<=n):
+                if(pow(3,i)==n):
+                    return True 
+                i=i+1
+            else:
+                return False
