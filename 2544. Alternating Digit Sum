@@ -1,0 +1,21 @@
+2544. Alternating Digit Sum
+
+
+
+https://leetcode.com/problems/alternating-digit-sum/
+
+
+
+class Solution:
+    def alternateDigitSum(self, n: int) -> int:
+        s=0
+        l=[]
+        m=str(n)
+        for i in m:
+            l.append(int(i))
+        for i in range(len(l)):
+            if(i%2==0):
+                s=s+l[i]
+            else:
+                s=s-l[i]
+        return s
