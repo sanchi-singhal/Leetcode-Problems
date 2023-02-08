@@ -1,0 +1,25 @@
+804. Unique Morse Code Words
+
+
+https://leetcode.com/problems/unique-morse-code-words/
+
+
+
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        l=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        m=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        d={}
+        for i in range(len(l)):
+            d[l[i]]=m[i]
+        # print(d)
+        k=[]
+        for i in range(len(words)):
+            s=""
+            for j in range(len(words[i])):
+                # print(words[i][j])
+                s=s+d[words[i][j]]
+            k.append(s)
+        # print(k)
+        j=set(k)
+        return len(j)
