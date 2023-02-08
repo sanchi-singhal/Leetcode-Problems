@@ -1,0 +1,16 @@
+2540. Minimum Common Value
+
+
+https://leetcode.com/problems/minimum-common-value/
+
+
+class Solution:
+    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
+        a=set(nums1)
+        b=set(nums2)
+        c=a.intersection(b)
+        # print(c)
+        if(list(c)!=[]):
+            return min(list(c))
+        else:
+            return -1
