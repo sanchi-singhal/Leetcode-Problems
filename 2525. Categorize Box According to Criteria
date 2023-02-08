@@ -1,0 +1,23 @@
+2525. Categorize Box According to Criteria
+
+
+https://leetcode.com/problems/categorize-box-according-to-criteria/
+
+
+
+class Solution:
+    def categorizeBox(self, length: int, width: int, height: int, mass: int) -> str:
+        volume=length*width*height
+        l=[]
+        if(length>=pow(10,4) or width>=pow(10,4) or height>=pow(10,4) or volume>=pow(10,9)):
+            l.append("Bulky")
+        if(mass>=100):
+            l.append("Heavy")
+        if("Bulky" in l and "Heavy" in l):
+            return "Both"
+        elif("Bulky" not in l and "Heavy" not in l):
+            return "Neither"
+        elif("Bulky" in l and "Heavy" not in l):
+            return "Bulky"
+        else:
+            return "Heavy"
