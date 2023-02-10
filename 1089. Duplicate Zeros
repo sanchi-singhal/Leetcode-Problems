@@ -1,0 +1,20 @@
+1089. Duplicate Zeros
+
+
+
+https://leetcode.com/problems/duplicate-zeros/
+
+
+
+from collections import deque
+class Solution:
+    def duplicateZeros(self, arr: List[int]) -> None:
+        l=[]
+        for i in arr:
+            if(i!=0):
+                l.append(i)
+            else:
+                l.append(0)
+                l.append(0)
+        for i in range(len(arr)):
+            arr[i]=l[i]
