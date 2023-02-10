@@ -1,0 +1,27 @@
+1304. Find N Unique Integers Sum up to Zero
+
+
+
+https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
+
+
+
+
+
+class Solution:
+    def sumZero(self, n: int) -> List[int]:
+        l=[]
+        j=1
+        k=1
+        if(n%2!=0):
+            l.append(0)
+            for i in range((n-1)//2):
+                l.append(j)
+                l.append(-j)
+                j=j+1
+        else:
+            for i in range((n)//2):
+                l.append(k)
+                l.append(-k)
+                k=k+1
+        return l
