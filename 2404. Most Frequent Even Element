@@ -1,0 +1,31 @@
+2404. Most Frequent Even Element
+
+
+https://leetcode.com/problems/most-frequent-even-element/
+
+
+
+
+
+
+import cmath
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        m=set(nums)
+        l=list(m)
+        ans=-1
+        k=cmath.inf
+        for i in range(len(l)):
+            if(l[i]%2==0):
+                if(nums.count(l[i])>ans):
+                    k=l[i]
+                    ans=nums.count(l[i])
+                elif(nums.count(l[i])==ans):
+                    k=min(l[i],k)
+        if(k==cmath.inf):
+            return -1
+        else:
+            return int(k)
+            
+
+
