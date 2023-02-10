@@ -1,0 +1,50 @@
+1275. Find Winner on a Tic Tac Toe Game
+
+
+
+https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/
+
+
+
+
+
+class Solution:
+    def tictactoe(self, moves: List[List[int]]) -> str:
+        l=[]
+        s=""
+        for i in range(3):
+            m=[]
+            for j in range(3):
+                m.append(None)
+            l.append(m)
+        # print(l)
+        for i in range(len(moves)):
+            m=moves[i][0]
+            n=moves[i][1]
+            if(i%2==0):
+                l[m][n]="x"
+            else:
+                l[m][n]="o"
+        print(l)
+        for i in range(len(l)):
+            if(l[i][0]==l[i][1] and l[i][1]==l[i][2]):
+                s=l[i][0]
+                break
+        for j in range(len(l)):
+            if(l[0][j]==l[1][j] and l[1][j]==l[2][j]):
+                s=l[0][j]
+                break
+        if(l[0][0]==l[1][1] and l[1][1]==l[2][2]):
+            s=l[1][1]
+        elif(l[0][2]==l[1][1] and l[1][1]==l[2][0]):
+            s=l[1][1]
+        if(s=="x"):
+            return "A"
+        elif(s=="o"):
+            return "B"
+        else:
+            for i in range(len(l)):
+                if(None in l[i]):
+                    return "Pending"
+            else:
+                return "Draw"
