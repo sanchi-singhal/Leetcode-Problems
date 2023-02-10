@@ -1,0 +1,33 @@
+1200. Minimum Absolute Difference
+
+
+https://leetcode.com/problems/minimum-absolute-difference/
+
+
+
+
+TLE
+
+import cmath
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        m=cmath.inf
+        mm=[]
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                if(abs(arr[j]-arr[i])<m and arr[i]<arr[j] ):
+                    m=abs(arr[j]-arr[i])
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                l=[]
+                if(abs(arr[j]-arr[i])==m and arr[i]<arr[j]):
+                    l.append(arr[i])
+                    l.append(arr[j])
+                mm.append(l)
+        print(mm)
+        kk=[]
+        for i in mm:
+            if i not in kk and i!=[]:
+                kk.append(i)
+        kk.sort(key = lambda x: x[0])
+        return kk
