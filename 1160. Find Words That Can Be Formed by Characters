@@ -1,0 +1,26 @@
+1160. Find Words That Can Be Formed by Characters
+
+
+https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
+
+
+
+
+class Solution:
+    def countCharacters(self, words: List[str], chars: str) -> int:
+        l=list(chars)
+        # print(l)
+        c=0
+        for i in words:
+            m=l.copy()
+            # print(m)
+            d=0
+            for j in i:
+                if j in m:
+                    m.remove(j)
+                    d=d+1
+                elif j not in m:
+                    break
+            if(d==len(i)):
+                c=c+len(i)
+        return c
