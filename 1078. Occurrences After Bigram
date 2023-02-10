@@ -1,0 +1,17 @@
+1078. Occurrences After Bigram
+
+
+
+https://leetcode.com/problems/occurrences-after-bigram/
+
+
+
+class Solution:
+    def findOcurrences(self, text: str, first: str, second: str) -> List[str]:
+        l=list(map(str,text.split()))
+        m=[]
+        print(l)
+        for i in range(len(l)-2):
+            if(l[i]==first and l[i+1]==second ):
+                m.append(l[i+2])
+        return m
