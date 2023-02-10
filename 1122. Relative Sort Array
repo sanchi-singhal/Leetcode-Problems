@@ -1,0 +1,21 @@
+1122. Relative Sort Array
+
+
+
+https://leetcode.com/problems/relative-sort-array/
+
+
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        l=[]
+        for i in arr2:
+            for j in arr1:
+                if(i==j):
+                    l.append(i)
+        print(l)
+        m=[]
+        for i in arr1:
+            if i not in l:
+                m.append(i)
+        m.sort()
+        return l+m
