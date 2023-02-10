@@ -21,3 +21,18 @@ class Solution:
 
 OPTIMIZED
 
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        l=[]
+        for i in nums:
+            if(i not in l):
+                l.append(i)
+        s=len(l)
+        m=len(nums)-len(l)
+        for i in range(m):
+            l.append("_")
+        for i in range(len(nums)):
+            nums[i]=l[i]
+        return s
+
