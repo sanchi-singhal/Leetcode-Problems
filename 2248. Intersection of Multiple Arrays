@@ -1,0 +1,21 @@
+2248. Intersection of Multiple Arrays
+
+
+https://leetcode.com/problems/intersection-of-multiple-arrays/description/
+
+
+
+class Solution:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        l=[]
+        s=set(nums[0])
+        # print(s)
+        for i in nums:
+            l.append(set(i))
+        # print(l)
+        for i in range(len(l)):
+            s=l[i].intersection(s)
+        # print(s)
+        m=list(s)
+        m.sort()
+        return m
