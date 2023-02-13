@@ -1,0 +1,16 @@
+2150. Find All Lonely Numbers in the Array
+
+
+https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/description/
+
+
+TLE
+
+
+class Solution:
+    def findLonely(self, nums: List[int]) -> List[int]:
+        l=[]
+        for i in range(len(nums)):
+            if(nums.count(nums[i])==1 and nums[i]+1 not in nums and nums[i]-1 not in nums):
+                l.append(nums[i])
+        return l
