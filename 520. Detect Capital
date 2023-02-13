@@ -1,0 +1,22 @@
+520. Detect Capital
+
+
+
+https://leetcode.com/problems/detect-capital/description/
+
+
+
+
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        c=0
+        s=0
+        for i in range(len(word)):
+            if(ord(word[i])>=65 and ord(word[i])<=90):
+                c=c+1
+        if(c==len(word) or c==0):
+            return True
+        elif(c==1 and ord(word[0])>=65 and ord(word[0])<=90):
+            return True
+        else:
+            return False
