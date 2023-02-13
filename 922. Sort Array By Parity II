@@ -1,0 +1,21 @@
+922. Sort Array By Parity II
+
+
+https://leetcode.com/problems/sort-array-by-parity-ii/
+
+
+
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        e=0
+        o=1
+        l=[None for i in range(len(nums))]
+        for i in nums:
+            if(i%2==0):
+                l[e]=i
+                e=e+2
+            else:
+                l[o]=i
+                o=o+2
+        # print(l)
+        return l
