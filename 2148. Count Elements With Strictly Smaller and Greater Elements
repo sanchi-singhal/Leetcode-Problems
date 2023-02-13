@@ -1,0 +1,15 @@
+2148. Count Elements With Strictly Smaller and Greater Elements 
+
+
+
+https://leetcode.com/problems/count-elements-with-strictly-smaller-and-greater-elements/description/
+
+
+
+class Solution:
+    def countElements(self, nums: List[int]) -> int:
+        c=0
+        for i in nums:
+            if(i<max(nums) and i>min(nums)):
+                c=c+1
+        return c
