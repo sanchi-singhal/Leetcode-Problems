@@ -1,0 +1,25 @@
+657. Robot Return to Origin
+
+
+
+https://leetcode.com/problems/robot-return-to-origin/description/
+
+
+
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        s=0
+        m=0
+        for i in moves:
+            if(i=="U"):
+                s=s+1
+            elif(i=="D"):
+                s=s-1
+            elif(i=="L"):
+                m=m+1
+            elif(i=="R"):
+                m=m-1
+        if(s==0 and m==0):
+            return True
+        else:
+            return False
