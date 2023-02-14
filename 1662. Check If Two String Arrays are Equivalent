@@ -1,0 +1,20 @@
+1662. Check If Two String Arrays are Equivalent
+
+
+
+https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+
+
+
+class Solution:
+    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
+        s=""
+        m=""
+        for i in word1:
+            s=s+""+i
+        for i in word2:
+            m=m+""+i
+        if(s==m):
+            return True
+        else:
+            return False
