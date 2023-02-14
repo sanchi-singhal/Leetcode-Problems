@@ -1,0 +1,29 @@
+1047. Remove All Adjacent Duplicates In String
+
+
+
+https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+
+
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+    def removeDuplicates(self, s: str) -> str:
+        for i in s:
+            if( len(self.l)>0 and i==self.l[-1]):
+                self.pop()
+            else:
+                self.push(i)
+        s=""
+        # print(self.l)
+        for i in self.l:
+            s=s+""+i
+        return s
+    def pop(self):
+        if(len(self.l)>0):
+            self.l.pop()
+    def push(self,element):
+        self.l.append(element)
+    
