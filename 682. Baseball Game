@@ -1,0 +1,29 @@
+682. Baseball Game
+
+
+
+https://leetcode.com/problems/baseball-game/
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+    def calPoints(self, operations: List[str]) -> int:
+        for i in operations:
+            if(i=="+"):
+                a=self.l[-1]
+                b=self.l[-2]
+                self.push(a+b)
+            elif(i=="C"):
+                self.pop()
+            elif(i=="D"):
+                self.push(self.l[-1]*2)
+            else:
+                self.push(int(i))
+        return sum(self.l)
+    def push(self,element):
+        self.l.append(element)
+    def pop(self):
+        if(len(self.l)>0):
+            self.l.pop()
+        
