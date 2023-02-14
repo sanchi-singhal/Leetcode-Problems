@@ -1,0 +1,18 @@
+1816. Truncate Sentence
+
+
+
+
+https://leetcode.com/problems/truncate-sentence/
+
+
+
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        l=list(map(str,s.split()))
+        # print(l)
+        ss=" "
+        for i in range(k):
+            ss=ss+" "+l[i]
+        m=ss.strip()
+        return m
