@@ -1,0 +1,39 @@
+844. Backspace String Compare
+
+
+
+https://leetcode.com/problems/backspace-string-compare/
+
+
+
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+        self.m=[]
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        for i in s:
+            if(i=="#"):
+                self.pops()
+            else:
+                self.pushs(i)
+        for i in t:
+            if(i=="#"):
+                self.popt()
+            else:
+                self.pusht(i)
+        if(self.l==self.m):
+            return True
+        else:
+            return False
+    def pushs(self,element):
+        self.l.append(element)
+    def pusht(self,element):
+        self.m.append(element)
+    def pops(self):
+        if(len(self.l)>0):
+            self.l.pop()
+    def popt(self):
+        if(len(self.m)>0):
+            self.m.pop()
