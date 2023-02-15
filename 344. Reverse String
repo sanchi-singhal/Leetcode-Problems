@@ -1,0 +1,26 @@
+344. Reverse String
+
+
+
+
+https://leetcode.com/problems/reverse-string/
+
+
+
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+    def reverseString(self, s: List[str]) -> None:
+        for i in s:
+            self.push(i)
+        for i in range(len(s)):
+            s[i]=self.pop()
+    def push(self,el):
+        self.l.append(el)
+    def pop(self):
+        if(len(self.l)>0):
+            return self.l.pop()
+    
+        
