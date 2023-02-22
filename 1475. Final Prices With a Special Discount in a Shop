@@ -1,0 +1,30 @@
+1475. Final Prices With a Special Discount in a Shop
+
+https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
+
+
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+    def push(self,el):
+        self.l.append(el)
+    def pop(self):
+        if(self.l):
+            return self.l.pop()
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        m=[]
+        for i in range(len(prices)-1):
+            self.push(prices[i])
+            print(m)
+            for j in range(i+1,len(prices)):
+                # print(m)
+                if(prices[j]<=self.l[-1]):
+                    a=self.pop()
+                    self.push(a-prices[j])
+                    break
+            m.append(self.l[-1])
+        m.append(prices[-1])
+        # print(m)
+        return m
