@@ -1,0 +1,34 @@
+917. Reverse Only Letters
+
+
+
+https://leetcode.com/problems/reverse-only-letters/
+
+
+
+class Solution:
+    def __init__(self):
+        self.m=[]
+    def push(self,el):
+        self.m.append(el)
+    def pop(self):
+        if(self.m):
+            return self.m.pop()
+    def reverseOnlyLetters(self, s: str) -> str:
+        l=[]
+        prices=list(s)
+        for i in range(97,123):
+            l.append(chr(i))
+        for i in range(65,91):
+            l.append(chr(i))
+        print(l)
+        for i in prices:
+            if i in l:
+                self.push(i)
+        for i in range(len(prices)):
+            if(prices[i] in l):
+                prices[i]=self.pop()
+        ss=""
+        for i in prices:
+            ss=ss+""+i
+        return ss
