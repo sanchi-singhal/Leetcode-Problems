@@ -1,0 +1,45 @@
+1190. Reverse Substrings Between Each Pair of Parentheses
+
+
+https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+        self.a=[]
+        self.m=[]
+    def push(self,el):
+        self.l.append(el)
+    def pop(self):
+        if(self.l):
+            return self.l.pop()
+    def pushm(self,el):
+        self.m.append(el)
+    def popm(self):
+        if(self.m):
+            return self.m.pop()
+    def pusha(self,el):
+        self.a.append(el)
+    def popa(self):
+        if(self.a):
+            return self.a.pop()
+    def reverseParentheses(self, s: str) -> str:
+        for i in s:
+            # print(self.l)
+            if(i!=")"):
+                self.push(i)
+            if(i==")"):
+                while(self.l[-1]!="("):
+                    self.pusha(self.pop())
+                self.pop()
+                # print(self.a)
+                for i in range(len(self.a)):
+                    self.pushm(self.popa())
+                for i in range(len(self.m)):
+                    self.push(self.popm())
+        # print(self.l)
+        ss=""
+        for i in self.l:
+            ss=ss+""+i
+        return ss
