@@ -1,0 +1,25 @@
+2315. Count Asterisks
+
+
+https://leetcode.com/problems/count-asterisks/
+
+
+
+class Solution:
+    def __init__(self):
+        self.l=[]
+    def push(self,el):
+        self.l.append(el)
+    def pop(self):
+        if(self.l):
+            self.l.pop()
+    def countAsterisks(self, s: str) -> int:
+        for i in s:
+            if(i=="|" and "|" in self.l):
+                while(self.l[-1]!="|"):
+                    self.pop()
+                self.pop()
+            else:
+                self.push(i)
+        # print(self.l)
+        return self.l.count("*")
