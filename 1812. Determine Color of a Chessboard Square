@@ -1,0 +1,22 @@
+1812. Determine Color of a Chessboard Square
+
+
+
+
+https://leetcode.com/problems/determine-color-of-a-chessboard-square/
+
+
+
+
+class Solution:
+    def squareIsWhite(self, coordinates: str) -> bool:
+        l=[]
+        for i in coordinates:
+            l.append(i)
+        print(l)
+        if(int(l[1])%2==0 and l[0]!="b" and l[0]!="d" and l[0]!="f" and l[0]!="h" ):
+            return True
+        elif(int(l[1])%2==1 and (l[0]=="b" or l[0]=="d" or l[0]=="f" or l[0]=="h")):
+            return True
+        else:
+            return False
