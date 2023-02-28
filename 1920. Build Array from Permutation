@@ -1,0 +1,16 @@
+1920. Build Array from Permutation
+
+
+
+https://leetcode.com/problems/build-array-from-permutation/
+
+
+
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        ans=[None for i in range(len(nums))]
+        for i in range(len(nums)):
+            a=nums[i]
+            b=nums[a]
+            ans[i]=b
+        return ans
