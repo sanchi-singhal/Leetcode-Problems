@@ -1,0 +1,36 @@
+6307. Pass the Pillow
+
+
+https://leetcode.com/contest/weekly-contest-335/problems/pass-the-pillow/
+
+
+
+class Solution:
+    def passThePillow(self, n: int, time: int) -> int:
+        i=1
+        # while(time>n):
+        #     time=time-(n-1)
+        #     i=n
+        #     if(time>n):
+        #         time=time-(n-1)
+        #         i=1
+        # if(i==n):
+        #     i=i-time
+        # else:
+        #     i=i+time
+        s=time//(n-1)
+        p=time%(n-1)
+        if(s%2==0):
+            i=1
+            i=i+p
+        else:
+            i=n
+            i=i-p
+            
+        
+        
+            
+                
+                
+        # print(i+1)
+        return i
