@@ -1,0 +1,26 @@
+6309. Split the Array to Make Coprime Products
+
+
+
+https://leetcode.com/contest/weekly-contest-335/problems/split-the-array-to-make-coprime-products/
+
+
+
+TLE:
+
+import math
+class Solution:
+    def findValidSplit(self, nums: List[int]) -> int:
+        # l=[]
+        for i in range(len(nums)-1):
+            p=1
+            s=1
+            for j in range(0,i+1):
+                p=p*nums[j]
+            for k in range(i+1,len(nums)):
+                s=s*nums[k]
+            if(math.gcd(p,s)==1):
+                return i
+        else:
+            return -1
+        
