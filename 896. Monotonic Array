@@ -1,0 +1,18 @@
+896. Monotonic Array
+
+
+https://leetcode.com/problems/monotonic-array/
+
+
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        k=nums.copy()
+        k.sort()
+        # print(k)
+        s=k[::-1]
+        # print(s)
+        if(nums==k or nums==s):
+            return True
+        else:
+            return False
+        # return True
