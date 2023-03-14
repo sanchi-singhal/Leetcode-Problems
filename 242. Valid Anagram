@@ -1,0 +1,20 @@
+242. Valid Anagram
+
+
+https://leetcode.com/problems/valid-anagram/description/
+
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if(len(s)!=len(t)):
+            return False
+        else:
+            l=list(s)
+            m=list(t)
+            # print(l,m)
+            for i in range(len(m)):
+                if(m[i] in l):
+                    l.remove(m[i])
+                else:
+                    return False
+            return True
