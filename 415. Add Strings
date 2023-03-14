@@ -1,0 +1,58 @@
+415. Add Strings
+
+
+https://leetcode.com/problems/add-strings/description/
+
+
+
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        s=min(len(num1),len(num2))
+        c=0
+        l=[]
+        i=len(num1)-1
+        j=len(num2)-1
+        while(i>=0 and j>=0):
+            m=int(num1[i])+int(num2[j])+c
+            i=i-1
+            j=j-1
+            if(m>9):
+                c=m//10
+                s=m%10
+                l.append(s)
+            else:
+                c=0
+                l.append(m)
+        if(i<0 and j<0):
+            if(c>0):
+                l.append(c)
+        if(i>=0):
+            while(i>=0):
+                m=(int(num1[i])+c)
+                if(m>9):
+                    c=m//10
+                    s=m%10
+                    l.append(s)
+                else:
+                    c=0
+                    l.append(m)
+                i=i-1
+            if(c>0):
+                l.append(c)
+        elif(j>=0):
+            while(j>=0):
+                m=(int(num2[j])+c)
+                j=j-1
+                if(m>9):
+                    c=m//10
+                    s=m%10
+                    l.append(s)
+                else:
+                    c=0
+                    l.append(m)
+            if(c>0):
+                l.append(c)
+        s=""
+        for i in l[::-1]:
+            s=s+str(i)
+        return s
