@@ -1,0 +1,29 @@
+476. Number Complement
+
+
+https://leetcode.com/problems/number-complement/description/
+
+
+class Solution:
+    def findComplement(self, num: int) -> int:
+        s=bin(num)
+        m=s[2:]
+        t=list(m)
+        # print(m)
+        for i in range(len(t)):
+            if(t[i]=="1"):
+                t[i]="0"
+            else:
+                t[i]="1"
+        k=""
+        for i in t:
+            k=k+i
+        # print(k)
+        j=0
+        l=[]
+        for i in k[::-1]:
+            l.append(pow(2,j)*int(i))
+            j=j+1
+        # print(l)
+
+        return sum(l)
