@@ -1,0 +1,25 @@
+128. Longest Consecutive Sequence
+
+
+https://leetcode.com/problems/longest-consecutive-sequence/description/
+
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        count=0
+        s=[]
+        s.append(1)
+        m=list(set(nums))
+        m.sort()
+        for i in range(1,len(m)):
+            if(m[i]==m[i-1]+1):
+                count=count+1
+            else:
+                count=0
+            # print(i,m[i],count)
+            s.append(count+1)
+        # print(s)
+        if(nums==[]):
+            return 0
+        else:
+            return max(s)
