@@ -1,0 +1,17 @@
+1317. Convert Integer to the Sum of Two No-Zero Integers
+
+
+https://leetcode.com/problems/convert-integer-to-the-sum-of-two-no-zero-integers/description/
+
+
+class Solution:
+    def getNoZeroIntegers(self, n: int) -> List[int]:
+        l=[]
+        for i in range(1,n):
+            m=str(i)
+            k=str(n-i)
+            # print(m,k)
+            if("0" not in m and "0" not in k):
+                l.append(i)
+                l.append(n-i)
+                return l
