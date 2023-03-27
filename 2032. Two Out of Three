@@ -1,0 +1,16 @@
+2032. Two Out of Three
+
+https://leetcode.com/problems/two-out-of-three/description/
+
+
+class Solution:
+    def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
+        l1=set(nums1)
+        l2=set(nums2)
+        l3=set(nums3)
+        a=l1.intersection(l2)
+        b=l2.intersection(l3)
+        c=l3.intersection(l1)
+        # print(a,b,c)
+        ans=a|b|c
+        return list(ans)
