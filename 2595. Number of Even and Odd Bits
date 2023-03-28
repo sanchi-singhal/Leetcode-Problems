@@ -1,0 +1,32 @@
+2595. Number of Even and Odd Bits
+
+
+
+https://leetcode.com/problems/number-of-even-and-odd-bits/description/
+
+
+
+
+
+
+class Solution:
+    def evenOddBit(self, n: int) -> List[int]:
+        ans=bin(n)
+        # print(ans)
+        l=[]
+        st=str(ans)[2:]
+        # print(st)
+        e=0
+        o=0
+        i=0
+        for j in range(len(st)-1,-1,-1):
+            if(st[j]=="1"):
+                if(i%2==0):
+                    e+=1
+                else:
+                    o+=1
+            # print(i,e,o)
+            i+=1
+        l.append(e)
+        l.append(o)
+        return l
