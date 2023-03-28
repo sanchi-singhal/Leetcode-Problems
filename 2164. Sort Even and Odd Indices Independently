@@ -1,0 +1,31 @@
+2164. Sort Even and Odd Indices Independently
+
+https://leetcode.com/problems/sort-even-and-odd-indices-independently/description/
+
+
+class Solution:
+    def sortEvenOdd(self, nums: List[int]) -> List[int]:
+        odd=[]
+        even=[]
+        ans=[]
+        for i in range(len(nums)):
+            if(i%2==0):
+                even.append(nums[i])
+            else:
+                odd.append(nums[i])
+        odd.sort(reverse=True)
+        even.sort()
+        i=0
+        j=0
+        while(i<len(odd) and j<len(even)):
+            ans.append(even[j])
+            ans.append(odd[i])
+            i+=1
+            j+=1
+        while(j<len(even)):
+            ans.append(even[j])
+            j=j+1
+        while(i<len(odd)):
+            ans.append(odd[i])
+            i=i+1
+        return ans
