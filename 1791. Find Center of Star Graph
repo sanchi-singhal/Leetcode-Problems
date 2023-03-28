@@ -1,0 +1,15 @@
+1791. Find Center of Star Graph
+
+
+https://leetcode.com/problems/find-center-of-star-graph/description/
+
+
+
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        a=edges[0][0]
+        b=edges[0][1]
+        if(a in edges[1]):
+            return a
+        else:
+            return b
