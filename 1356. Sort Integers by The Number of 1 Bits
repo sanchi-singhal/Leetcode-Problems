@@ -1,0 +1,18 @@
+1356. Sort Integers by The Number of 1 Bits
+
+https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/description/
+
+
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        l=[]
+        arr.sort()
+        for i in arr:
+            s=bin(i)
+            m=s.count("1")
+            l.append((m,i))
+        l.sort()
+        k=[]
+        for i in range(len(l)):
+            k.append(l[i][1])  
+        return k
