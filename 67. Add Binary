@@ -1,0 +1,17 @@
+67. Add Binary
+
+https://leetcode.com/problems/add-binary/description/
+
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        m='0b'+a
+        n='0b'+b
+        k=int(m,2)
+        l=int(n,2)
+        ss=k+l
+        an=bin(ss)
+        # print(an)
+        ans=an[2::]
+        return ans
+        
