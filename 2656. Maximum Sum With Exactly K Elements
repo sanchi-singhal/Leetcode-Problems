@@ -1,0 +1,13 @@
+2656. Maximum Sum With Exactly K Elements 
+
+https://leetcode.com/problems/maximum-sum-with-exactly-k-elements/description/
+
+class Solution:
+    def maximizeSum(self, nums: List[int], k: int) -> int:
+        score=0
+        for i in range(k):
+            m=max(nums)
+            score+=m
+            nums.remove(m)
+            nums.append(m+1)
+        return score
