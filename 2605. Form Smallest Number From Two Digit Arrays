@@ -1,0 +1,22 @@
+2605. Form Smallest Number From Two Digit Arrays
+
+
+https://leetcode.com/problems/form-smallest-number-from-two-digit-arrays/description/
+
+class Solution:
+    def minNumber(self, nums1: List[int], nums2: List[int]) -> int:
+        s1=set(nums1)
+        s2=set(nums2)
+        an=s1.intersection(s2)
+        nums3=list(an)
+        if(nums3):
+            return min(nums3)
+        else:
+            a=min(nums1)
+            b=min(nums2)
+            if(a<b and a!=0):
+                c=int(str(a)+str(b))
+            else:
+                c=int(str(b)+str(a))
+            # c=int(a+b)
+            return c
