@@ -1,0 +1,13 @@
+2108. Find First Palindromic String in the Array
+
+
+https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/
+
+
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        for k in words:
+            if(k==k[::-1]):
+                return k
+        else:
+            return ""
