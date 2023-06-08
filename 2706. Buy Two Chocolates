@@ -1,0 +1,15 @@
+2706. Buy Two Chocolates
+
+
+
+https://leetcode.com/problems/buy-two-chocolates/description/
+
+
+class Solution:
+    def buyChoco(self, prices: List[int], money: int) -> int:
+        prices.sort()
+        a=prices[0]+prices[1]
+        if(a<=money):
+            return money-a
+        else:
+            return money
